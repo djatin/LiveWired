@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --LWGray: #95949B;
+  --LWPink: #FF3797;
+  --LWRed: #EF3B31;
+  --LWSilver: #CCD6DD;
+
+  --SystemWhite: #ffffff;
+  --SystemGray5: #2C2C2E;
+  --SystemGray6: #1C1C1E;
+
+  --logo--width: 10.6875rem;
+
+  --site-font: "Inter", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.fs8{
+  font-size: 0.5rem;
+}
+.fs11{
+  font-size: 0.6875rem;
+}
+.fs13{
+  font-size: 0.8125rem;
+}
+.fs17{
+  font-size: 1.0625rem;
+}
+.fs22{
+  font-size: 1.375rem;
+}
+
+body {
+  background-color: rgb(var(--foreground-rgb));
+  font-family: var(--site-font);
+  color: var(--SystemWhite);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Header */
+header{
+  @apply py-3;
+}
+.site--wrapper{
+  @apply px-3 mx-auto;
+  max-width: 90rem;
+}
+.site--logo{
+  width: var(--logo--width);
+}
+.site--menu--action a{
+  color: var(--LWGray);
+  @apply fs13 font-semibold;
+}
+.form--field {
+  @apply relative;
+}
+.form--field input{
+  background-color: var(--SystemGray6);
+  color: #aaa;
+  width: 26.625rem;
+  @apply text-base pl-3 pr-16 py-3;
+}
+.form--field button{
+  @apply absolute right-0 top-0 w-16 h-10 flex items-center justify-center;
+}
+.form--mic{
+  @apply w-10 h-10 flex items-center justify-center;
+}
+.app--install a{
+  color: var(--SystemWhite);
+  @apply font-semibold fs13 border border-solid rounded-md py-2 px-4;
+}
+.user--auth a{
+  background-color: var(--LWPink);
+  color: var(--SystemWhite);
+  @apply rounded-full font-semibold flex items-center justify-center w-8 h-8;
+}
+
+/* Badges Styling */
+.badges{
+  color: var(--SystemWhite);
+  @apply w-max py-0.5 px-3 rounded-xl fs8 uppercase leading-none;
+}
+.pink-badge{
+  background-color: var(--LWPink);
+}
+.red-badge{
+  background-color: var(--LWRed);
+}
+.feed--item .badges {
+  @apply absolute bottom-4 left-4;
+}
+.live-badge{
+  @apply text-xs rounded px-1.5;
+}
+
+
+/* Banner */
+.banner--image{
+  @apply rounded-lg overflow-hidden;
+}
+.banner--title{
+  @apply text-2xl font-bold leading-6 mt-3 mb-2;
+}
+.banner--text{
+  color: var(--LWGray);
+  @aaply text-base leading-5;
+}
+
+/* Section Title */
+.section--head {
+  @apply flex gap-6 items-center mb-4;
+}
+.section--head .title{
+  @apply fs22 font-bold flex gap-0.5;
+}
+.section--head .event--action a{
+  @apply fs17 relative flex items-center gap-3;
+  color: var(--LWGray);
+}
+.section--head .event--action a:after{
+  content: '';
+  border-color: var(--SystemWhite);
+  @apply w-2 h-2 block border-t border-r border-solid rotate-45;
+}
+
+/* Feeds */
+.event--section{
+  @apply my-12;
+}
+.event--feeds--wrapper{
+  @apply flex flex-wrap gap-3;
+}
+.feed--item {
+  @apply mb-4 relative;
+}
+.feed--title .title{
+  @apply text-xl;
+}
+.feed--desc p{
+  @apply fs13 opacity-50;
+}
+.event--section-style--2 .event--feeds--wrapper{
+  @apply gap-10;
+}
+.event--section-style--2 .feed--title .title{
+  @apply font-normal fs13 opacity-80 text-center;
+}
+
+/* Footer */
+.footer--main{
+  @apply py-10;
+}
+.footer--main .site--wrapper{
+  @apply flex flex-wrap justify-between items-center;
+}
+.footer--nav > ul{
+  @apply flex flex-wrap gap-10;
+}
+.footer--nav li span{
+  @apply text-base font-semibold;
+  color: var(--LWSilver);
+}
+.footer--nav ul.sub--nav{
+  @apply mt-3;
+}
+.footer--nav ul.sub--nav li a{
+  @apply fs13 font-semibold py-1 block;
+  color: var(--LWSilver);
+}
+.social--links{
+  @apply w-full flex gap-6;
+}
+.social--links a{
+  @apply p-2;
+}
+.download--options{
+  @apply flex gap-2 mt-8;
+}
+
+.footer--secondary{
+  padding: 1.875rem 0;
+  background-color: var(--SystemGray5);
+}
+.footer--secondary .site--wrapper{
+  @apply flex flex-wrap justify-between items-center gap-4;
+}
+.footer--secondary ul{
+  @apply flex gap-4;
+}
+.footer--secondary p,
+.footer--secondary a{
+  color: var(--LWSilver);
+}
+.footer--secondary p{
+  @apply fs13;
+}
+.footer--secondary a{
+  @apply fs11;
+}
