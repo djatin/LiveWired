@@ -23,12 +23,8 @@
   --site-font: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+a{
+  @apply transition-all;
 }
 
 .fs8{
@@ -64,30 +60,39 @@ header{
   @apply py-3;
 }
 .site--wrapper{
-  @apply px-3 mx-auto;
+  @apply px-4 mx-auto;
   max-width: 90rem;
 }
 .site--logo{
   width: var(--logo--width);
+}
+.site--menu--action{
+  @apply hidden lg:flex items-center gap-6;
+}
+.site--menu--action ul{
+  @apply gap-6 md:flex 2xl:gap-12;
 }
 .site--menu--action a{
   color: var(--LWGray);
   @apply fs13 font-semibold;
 }
 .form--field {
-  @apply relative;
+  @apply relative w-40 xl:w-full;
 }
 .form--field input{
   background-color: var(--SystemGray6);
   color: #aaa;
   width: 26.625rem;
-  @apply text-base pl-3 pr-16 py-3;
+  @apply text-base pl-3 pr-16 py-3 max-w-full;
 }
 .form--field button{
   @apply absolute right-0 top-0 w-16 h-10 flex items-center justify-center;
 }
 .form--mic{
   @apply w-10 h-10 flex items-center justify-center;
+}
+.app--install{
+  @apply hidden md:block;
 }
 .app--install a{
   color: var(--SystemWhite);
@@ -119,6 +124,9 @@ header{
 
 
 /* Banner */
+.site--banner{
+  @apply hidden md:block;
+}
 .banner--image{
   @apply rounded-lg overflow-hidden;
 }
@@ -172,7 +180,7 @@ header{
 
 /* Footer */
 .footer--main{
-  @apply py-10;
+  @apply py-10 hidden lg:block;
 }
 .footer--main .site--wrapper{
   @apply flex flex-wrap justify-between items-center;
@@ -202,6 +210,7 @@ header{
 }
 
 .footer--secondary{
+  /* @apply hidden; */
   padding: 1.875rem 0;
   background-color: var(--SystemGray5);
 }
@@ -220,4 +229,11 @@ header{
 }
 .footer--secondary a{
   @apply fs11;
+}
+
+.footer--mobile li a{
+  @apply block text-center flex flex-wrap flex-col items-center gap-2 opacity-60 text-xs;
+}
+.footer--mobile li a:hover{
+  @apply opacity-100;
 }

@@ -5,7 +5,7 @@ export default function Header() {
     return(
         <>
             <header>
-                <div className="site--wrapper md:flex gap-6 items-center justify-between">
+                <div className="site--wrapper flex gap-6 items-center justify-between">
                     {/* Site Logo */}
                     <div className="site--logo">
                         <Link href="/">
@@ -24,9 +24,9 @@ export default function Header() {
                     </div>
 
                     {/* Site menu & search section */}
-                    <div className="site--menu--action flex items-center gap-6">
+                    <div className="site--menu--action">
                         {/* Site menus */}
-                        <ul className="md:flex gap-12">
+                        <ul>
                             <li>
                                 <Link href="#">My LiveWires</Link>
                             </li>
