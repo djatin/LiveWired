@@ -13,7 +13,7 @@ export default function LiveWires() {
                         </div>
                     </div>
 
-                    <div className="event--feeds--wrapper">
+                    <div className="event--feeds--wrapper feeds--wrapper--style-2">
                         <WiresFeed />
                     </div>
                 </div>

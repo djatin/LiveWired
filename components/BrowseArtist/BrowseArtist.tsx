@@ -13,7 +13,7 @@ export default function BrowseArtist() {
                         </div>
                     </div>
 
-                    <div className="event--feeds--wrapper">
+                    <div className="event--feeds--wrapper feeds--wrapper--style-3">
                         <ArtistFeed />
                     </div>
                 </div>

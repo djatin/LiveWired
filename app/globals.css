@@ -60,7 +60,7 @@ header{
   @apply py-3;
 }
 .site--wrapper{
-  @apply px-4 mx-auto;
+  @apply px-4 mx-auto md:px-3;
   max-width: 90rem;
 }
 .site--logo{
@@ -162,6 +162,9 @@ header{
 .event--feeds--wrapper{
   @apply flex flex-wrap gap-3;
 }
+.event--feed{
+  @apply basis-72 grow;
+}
 .feed--item {
   @apply mb-4 relative;
 }
@@ -176,6 +179,12 @@ header{
 }
 .event--section-style--2 .feed--title .title{
   @apply font-normal fs13 opacity-80 text-center;
+}
+.feeds--wrapper--style-2 .event--feed{
+  @apply basis-40;
+}
+.feeds--wrapper--style-3 .event--feed{
+  @apply basis-28;
 }
 
 /* Footer */

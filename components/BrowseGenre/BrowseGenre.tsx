@@ -13,7 +13,7 @@ export default function BrowseGenre() {
                         </div>
                     </div>
 
-                    <div className="event--feeds--wrapper">
+                    <div className="event--feeds--wrapper feeds--wrapper--style-3">
                         <GenreFeed />
                     </div>
                 </div>
