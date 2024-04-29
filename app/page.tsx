@@ -1,7 +1,5 @@
 import BrowseArtist from "@/components/BrowseArtist/BrowseArtist";
 import BrowseGenre from "@/components/BrowseGenre/BrowseGenre";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import LatestEvents from "@/components/LatestEvents/LatestEvents";
 import LiveEvents from "@/components/LiveEvents/LiveEvents";
 import LiveWires from "@/components/LiveWires/LiveWires";
@@ -11,14 +9,12 @@ export default function Home() {
   return (
 
     <>
-      <Header />
       <Slider />
       <LiveEvents />
       <LiveWires />
       <LatestEvents />
       <BrowseGenre />
       <BrowseArtist />
-      <Footer />
     </>
     
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">

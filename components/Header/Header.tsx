@@ -28,7 +28,7 @@ export default function Header() {
                         {/* Site menus */}
                         <ul>
                             <li>
-                                <Link href="#">My LiveWires</Link>
+                                <Link href="/mylivewires">My LiveWires</Link>
                             </li>
                             <li>
                                 <Link href="#">Following</Link>
