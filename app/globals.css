@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -13,14 +14,19 @@
   --LWPink: #FF3797;
   --LWRed: #EF3B31;
   --LWSilver: #CCD6DD;
+  --LWGreen: #53B781;
 
   --SystemWhite: #ffffff;
   --SystemGray5: #2C2C2E;
   --SystemGray6: #1C1C1E;
 
+  --DescBgColor: rgb(116 116 128 / 18%);
+
   --logo--width: 10.6875rem;
 
   --site-font: "Inter", sans-serif;
+
+  --highlightFont: "Roboto", sans-serif;
 }
 
 a{
@@ -36,6 +42,9 @@ a{
 .fs13{
   font-size: 0.8125rem;
 }
+.fs15{
+  font-size: 0.9375rem;
+}
 .fs17{
   font-size: 1.0625rem;
 }
@@ -47,6 +56,14 @@ body {
   background-color: rgb(var(--foreground-rgb));
   font-family: var(--site-font);
   color: var(--SystemWhite);
+}
+
+.highlightfont{
+  font-family: var(--highlightFont);
+}
+
+.gradiant--bg{
+  background: linear-gradient(180deg, #000000 0%, #281A21 100%);
 }
 
 @layer utilities {
@@ -160,7 +177,7 @@ header{
   @apply my-12;
 }
 .event--feeds--wrapper{
-  @apply flex flex-wrap gap-3;
+  /* @apply flex flex-wrap gap-3; */
 }
 .event--feed{
   @apply basis-72 grow;
@@ -185,6 +202,9 @@ header{
 }
 .feeds--wrapper--style-3 .event--feed{
   @apply basis-28;
+}
+button.slick-arrow{
+  @apply invisible;
 }
 
 /* Footer */
@@ -245,4 +265,116 @@ header{
 }
 .footer--mobile li a:hover{
   @apply opacity-100;
+}
+
+/* social buttons css */
+.social--btns {
+  @apply flex items-center gap-4 flex-wrap md:flex-nowrap;
+}
+.social--btns a{
+  @apply fs15 flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold;
+  background-color: var(--SystemGray5);
+}
+.follow--btn a{
+  @apply text-black bg-white;
+}
+
+
+/* Live wires page */
+.video--wrapper {
+  @apply flex gap-6 mt-6 flex-wrap;
+}
+.live--video--wrapper, .similar--videos{
+  @apply w-full;
+}
+.similar--videos{
+  @apply hidden;
+}
+@media screen and (min-width: 64rem){
+  .live--video--wrapper{
+    width: 70.269%;
+  }
+  .similar--videos{
+    @apply block;
+    width: calc(100% - (70.269% + 1.5rem));
+  }
+}
+.cam--positions {
+  @apply flex flex-wrap gap-3;
+}
+.cam--positions .event--feed{
+  @apply basis-40;
+}
+.cam--positions .feed--item{
+  @apply rounded-lg overflow-hidden mb-2;
+  background-color: var(--SystemGray5);
+}
+.cam--positions .feed--item img{
+  @apply opacity-0;
+}
+.cam--positions .feed--title .title{
+  @apply fs15;
+}
+
+.live--section .section--detail{
+  @apply flex justify-between items-center gap-6 flex-wrap;
+}
+.artist--pic{
+  @apply relative;
+}
+.artist--status{
+  @apply absolute rounded-full w-2 h-2 bottom-0 right-0;
+}
+.artist--status.active{
+  background: var(--LWGreen);
+} 
+.artist--status.inactive{
+  background: var(--LWRed);
+} 
+.artist--status.offline{
+  background: var(--SystemGray5);
+} 
+.artist--detail{
+  @apply flex items-center gap-4 flex-wrap md:flex-nowrap;
+}
+.artist--meta{
+  @apply flex items-center gap-6 font-semibold;
+}
+
+.live--event--desc{
+  background-color: var(--DescBgColor);
+  @apply rounded-xl p-2.5 font-normal text-sm mt-4 highlightfont;
+}
+.live--event--desc .desc--stats{
+  @apply font-medium;
+}
+.desc--text span{
+  @apply font-bold;
+}
+
+.comment--actions, .action--btns{
+  @apply flex justify-between items-center gap-6;
+}
+.action--btns button{
+  @apply fs15 px-6 py-3.5 rounded-lg font-semibold;
+}
+.action--btns button[type="submit"]{
+  background-color: var(--SystemGray5);
+}
+
+.video--item{
+  @apply rounded-lg overflow-hidden mb-2;
+  background-color: var(--SystemGray5);
+}
+.video--item img{
+  @apply opacity-0;
+}
+.videos--detail{
+  @apply flex gap-6 mb-4;
+}
+.video--title {
+  @apply mb-1 fs15 font-semibold;
+}
+.video--stats span {
+  @apply block opacity-50 font-normal text-xs;
 }

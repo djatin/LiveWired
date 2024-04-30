@@ -1,12 +1,25 @@
+'use client';
+
 import Image from "next/image";
 import { GenreFeedData } from "./GenreFeedData";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function GenreFeed() {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 7,
+        slidesToScroll: 2
+    };
     return(
         <>
+        <Slider {...settings}>
             {GenreFeedData.map((val) => {
                 return(                    
-                    <div className="event--feed">
+                    <div className="event--feed" key={val.id}>
                         {val.feedImage &&
                             <div className="feed--item">
                                 <Image 
@@ -18,16 +31,10 @@ export default function GenreFeed() {
                                 />
                             </div>
                         }
-                        {/* <div className="feed--body">
-                            {val.feedTitle &&
-                                <div className="feed--title">
-                                    <h3 className="title">{val.feedTitle}</h3>
-                                </div>
-                            }
-                        </div> */}
                     </div>
                 );
             })}
+        </Slider>
         </>
     )
 }

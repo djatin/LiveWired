@@ -1,12 +1,24 @@
+'use client'
 import Image from "next/image";
 import { LiveFeedData } from "./LiveFeedData";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function LiveFeed() {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4
+      };
     return(
         <>
+        <Slider {...settings}>
             {LiveFeedData.map((val) => {
                 return(                    
-                    <div className="event--feed">
+                    <div className="" key={val.id}>
                         {val.feedImage &&
                             <div className="feed--item">
                                 <Image 
@@ -34,6 +46,7 @@ export default function LiveFeed() {
                     </div>
                 );
             })}
+            </Slider>
         </>
     )
 }

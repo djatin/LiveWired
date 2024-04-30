@@ -1,12 +1,28 @@
+'use client';
+
 import Image from "next/image";
 import { WiresFeedData } from "./WiresFeedData";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function WiresFeed() {
+    const settings = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 5000,
+        autoplaySpeed: 5000,
+        cssEase: "linear"
+    };
     return(
         <>
+        <Slider {...settings}>
             {WiresFeedData.map((val) => {
                 return(                    
-                    <div className="event--feed">
+                    <div className="event--feed" key={val.id}>
                         {val.feedImage &&
                             <div className="feed--item">
                                 <Image 
@@ -33,6 +49,7 @@ export default function WiresFeed() {
                     </div>
                 );
             })}
+        </Slider>
         </>
     )
 }
