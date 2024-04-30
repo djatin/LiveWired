@@ -18,7 +18,7 @@ export default function LiveFeed() {
         <Slider {...settings}>
             {LiveFeedData.map((val) => {
                 return(                    
-                    <div className="" key={val.id}>
+                    <div className="feed--item" key={val.id}>
                         {val.feedImage &&
                             <div className="feed--item">
                                 <Image 
